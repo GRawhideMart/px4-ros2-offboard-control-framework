@@ -1,0 +1,15 @@
+{   
+   "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Launch PX4 Gazebo",
+            "type": "shell",
+            "command": "cd PX4-Autopilot && make px4_sitl gz_x500",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "group": "test"
+        }
+    ]
+}

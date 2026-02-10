@@ -1,0 +1,30 @@
+{
+	"name": "PX4-ROS2 System",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"runArgs": [
+		"--privileged",
+		"--net=host",
+		"--ipc=host",
+		"--env=DISPLAY=${env:DISPLAY}",
+		"--env=WAYLAND_DISPLAY=${env:WAYLAND_DISPLAY}",
+		"--env=XDG_RUNTIME_DIR=${env:XDG_RUNTIME_DIR}",
+		"--env=PULSE_SERVER=${env:PULSE_SERVER}"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-python.python",
+				"ranch-hand-robotics.rde-pack"
+			]
+		}
+	},
+	"mounts": [
+		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
+		"source=/mnt/wslg,target=/mnt/wslg,type=bind,consistency=cached"
+	],
+	"remoteUser": "root", 
+	"postCreateCommand": "if [ ! -d \"PX4-Autopilot\" ]; then git clone https://github.com/PX4/PX4-Autopilot.git --recursive; fi && cd PX4-Autopilot && make distclean && make px4_sitl_default"
+}
