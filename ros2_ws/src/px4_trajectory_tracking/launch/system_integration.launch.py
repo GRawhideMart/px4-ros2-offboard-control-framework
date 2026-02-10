@@ -9,6 +9,7 @@ def generate_launch_description():
     pkg_share = get_package_share_directory(package_name)
 
     rviz_config_path = os.path.join(pkg_share, 'config', 'drone_view.rviz')
+    plotjuggler_layout_path = os.path.join(pkg_share, 'config', 'dashboard.xml')
 
     return LaunchDescription([
         # ------------------------------------
@@ -48,7 +49,10 @@ def generate_launch_description():
             package='plotjuggler',
             executable='plotjuggler',
             name='plotjuggler',
-            arguments=['--nosplash'],
+            arguments=[
+                '--nosplash',
+                '-l', plotjuggler_layout_path
+                ],
             output='screen'
         )
     ])
