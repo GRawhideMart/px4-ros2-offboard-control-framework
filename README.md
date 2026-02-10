@@ -20,7 +20,7 @@ This repository uses **Git Submodules** to manage dependencies like `PX4-Autopil
 You **must** clone with the `--recursive` flag to automatically download the required PX4 submodules.
 
 ```bash
-git clone --recursive [https://github.com/GRawhideMart/px4_offboard_tracking.git](https://github.com/YOUR_USERNAME/px4_offboard_tracking.git)
+git clone --recursive [https://github.com/GRawhideMart/px4_offboard_tracking.git](https://github.com/GRawhideMart/px4_offboard_tracking.git)
 cd px4_offboard_tracking
 
 ```
