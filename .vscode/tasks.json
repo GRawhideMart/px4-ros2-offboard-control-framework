@@ -4,7 +4,7 @@
         {
             "label": "Launch PX4 Gazebo",
             "type": "shell",
-            "command": "cd PX4-Autopilot && make px4_sitl gz_x500",
+            "command": "./scripts/setup_px4_sitl.sh && cd PX4-Autopilot && make px4_sitl gz_x500",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
